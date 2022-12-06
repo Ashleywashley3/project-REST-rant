@@ -6,6 +6,12 @@ function home () {
       <Def>
           <main>
               <h1>HOME</h1>
+              <div>
+                <img src="/images/fire.jpg" alt="Fire" />
+              </div>
+              <div>
+                Photo by <a href="AUTHOR_LINK">Tirza van Dijk</a> on <a href="UNSPLASH_LINK">Unsplash</a>
+              </div>
               <a href="/places">
                 <button className="btn-primary">Places Page</button>
               </a>

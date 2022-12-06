@@ -18,3 +18,8 @@ main {
     padding: 20px;
     background-color: white;
 }
+
+img {
+    height: 40em;
+    width: 40em;
+}
