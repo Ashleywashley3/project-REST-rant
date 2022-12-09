@@ -1,23 +1,11 @@
 const router = require('express').Router()
 const places = require('../models/places.js')
 
+
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: '/images/hot-air-balloons.jpg'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: '/images/ocean.jpg'
-      }]
-      
-    res.render('places/index', { places })
+  res.render('places/index', { places })
 })
+
 
 router.post('/', (req, res) => {
   if (!req.body.pic) {
@@ -33,12 +21,13 @@ router.post('/', (req, res) => {
   res.redirect('/places')
 })
 
+
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
 
-router.get('/:id', (req, res) => {
+router.get('/:id/edit', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
     res.render('error404')
@@ -47,7 +36,7 @@ router.get('/:id', (req, res) => {
     res.render('error404')
   }
   else {
-    res.render('places/show', { place: places[id], id })
+    res.render('places/edit', { place: places[id] })
   }
 })
 
@@ -57,6 +46,7 @@ router.post('/', (req, res) => {
   console.log(req.body)
   res.send('POST /places')
 })
+
 
 router.delete('/:id', (req, res) => {
   let id = Number(req.params.id)
