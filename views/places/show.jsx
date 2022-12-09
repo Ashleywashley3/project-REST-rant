@@ -3,12 +3,12 @@ const Def = require('../default')
 
 function show (data) {
     let comments = (
-        <h3 className="inactive">
+        <h3>
           No comments yet!
         </h3>
       )
       let rating = (
-        <h3 className="inactive">
+        <h3>
           Not yet rated
         </h3>
       )
@@ -18,7 +18,7 @@ function show (data) {
             <h1>{ data.place.name }</h1>
             <a href={`/places/${data.id}/edit`} className="btn btn-warning">
                 Edit
-            </a>{' '}
+            </a>
             <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
                 <button type="submit" className="btn btn-danger">
                     Delete
