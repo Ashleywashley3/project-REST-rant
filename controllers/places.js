@@ -6,14 +6,19 @@ router.get('/', (req, res) => {
   res.render('places/index', { places })
 })
 
-router.get('/index/edit', (req, res) => {
-  const { index } = req.params
-  const places = places[index]
-  res.render('edit', {
-    places,
-    index
-  })
+router.get('/:id/edit', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+      res.render('error404')
+  }
+  else if (!places[id]) {
+      res.render('error404')
+  }
+  else {
+    res.render('places/edit', { place: places[id] })
+  }
 })
+
 
 
 router.post('/', (req, res) => {
