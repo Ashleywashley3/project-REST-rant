@@ -1,3 +1,5 @@
+
+
 body {
     background-color: lightblue;
     text-align: center;
@@ -11,17 +13,12 @@ h1 {
 h2 {
     color: lightblue;
 }
-  
+
 main {
     margin-right: 20px;
     margin-left: 20px;
     padding: 20px;
     background-color: white;
-}
-
-img {
-    height: 40em;
-    width: 40em;
 }
 
 nav {
@@ -45,6 +42,22 @@ nav a {
 }
 
 nav a:hover {
-    color: pink;
+    color: lightblue;
     text-decoration: none;
+}
+
+form {
+    display: inline;
+}
+
+.inactive {
+    color: gray;
+}
+
+.border {
+    border: 1px solid gray;
+}
+
+img {
+    height: 20em;
 }
